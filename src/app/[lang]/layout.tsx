@@ -30,8 +30,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div className="min-h-screen bg-black text-white">
-      <div className="mx-auto max-w-6xl px-4 py-8">
       <NotificationBanner />
+      <div className="mx-auto max-w-6xl px-4 py-8">
         {children}
       </div>
       {/* Decorative lightning elements */}
