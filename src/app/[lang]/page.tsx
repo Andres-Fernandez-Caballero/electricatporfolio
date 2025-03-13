@@ -9,14 +9,8 @@ import Loading from "./loading"
 import { SpeedDial } from "@/components/ui/speed-dial"
 import ErrorBoundary from "@/components/error-boundary"
 
-
-type PageProps = {
-  params: { lang: string }
-  searchParams: { [key: string]: string | string[] | undefined }
-}
-
-
-export default async function ProfilePage({ params }: PageProps) {
+// eslint-disable-next-line 
+export default async function ProfilePage({ params }: any) {
   const { lang } = params
   const dictionary = await getDictionary(lang)
 
