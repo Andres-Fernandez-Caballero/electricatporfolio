@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import Image, { StaticImageData } from "next/image"
+import Image, { type StaticImageData } from "next/image"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { cn } from "@/lib/utils"
 import placeholder from "@/app/assets/placeholder.svg"
@@ -40,7 +40,7 @@ export function ProjectCarousel({ images, title, autoplayInterval = 2000 }: Proj
   if (!images || images.length === 0) return null
 
   return (
-    <div className="relative h-96 w-full rounded-md">
+    <div className="relative h-96 w-full rounded-md bg-blue-950/30">
       {images.map((image, index) => (
         <div
           key={index}
@@ -51,10 +51,10 @@ export function ProjectCarousel({ images, title, autoplayInterval = 2000 }: Proj
         >
           <Image
             src={image || placeholder}
-            style={{color: 'white', backgroundColor: 'white'}}
+            style={{ color: "white", backgroundColor: "transparent" }}
             alt={`${title} - imagen ${index + 1}`}
             fill
-            className="object-cover"
+            className="object-contain"
             priority={index === 0}
           />
         </div>

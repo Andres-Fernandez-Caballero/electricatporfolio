@@ -12,6 +12,7 @@ export function ProfileStats() {
           <Code2 className="h-8 w-8 text-blue-400" />
           <div>
             <h3 className="text-sm font-medium text-blue-400">Github Projects</h3>
+            <p className="text-xs font-light italic text-white">Datos obtenidos desde github</p>
             <p className="text-2xl font-bold text-white">{gitData?.public_repos ?? 0}</p>
           </div>
         </div>
@@ -21,7 +22,7 @@ export function ProfileStats() {
           <Star className="h-8 w-8 text-yellow-400" />
           <div>
             <h3 className="text-sm font-medium text-blue-400">Calificaciones positivas</h3>
-            <p className="text-xs font-bold text-white">Como profesor en tus <a href="#"  className="text-white font-bold">tusClases</a></p>
+            <p className="text-xs font-bold text-white">Como profesor en tus <a href="https://www.tusclases.com.ar/profesores-programacion-online/clases-programacion-personalizadas-online-1063348.aspx"  className="text-blue-300 font-bold underline">tusClases.com.ar</a></p> 
             <p className="text-2xl font-bold text-white">39</p>
           </div>
         </div>

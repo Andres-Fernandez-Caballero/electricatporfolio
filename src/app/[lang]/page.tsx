@@ -7,29 +7,31 @@ import { ProfileStats } from "@/components/profile-stats"
 import { TechStack } from "@/components/tech-stack"
 import Loading from "./loading"
 import { SpeedDial } from "@/components/ui/speed-dial"
-import ErrorBoundary from "@/components/error-boundary"
 
 // eslint-disable-next-line 
 export default async function ProfilePage({ params }: any) {
-  const { lang } = params
-  const dictionary = await getDictionary(lang)
+    const { lang } = params
+    const dictionary = await getDictionary(lang)
 
-  return (
-    <>
-      <Suspense fallback={<Loading />}>
-        <ProfileHeader />
-      </Suspense>
-      <AboutMe bio={dictionary["bio"]} />
-      <Suspense fallback={<Loading />}>
-        <ProfileStats />
-      </Suspense>
-      <ErrorBoundary>
-        <Suspense fallback={<Loading />}>
-          <TechStack />
-        </Suspense>
-      </ErrorBoundary>
-      <ProjectGrid dictionary={dictionary} />
-      <SpeedDial currentLang={lang} />
-    </>
-  )
+    return (
+        <>
+            <Suspense fallback={<Loading />}>
+                <ProfileHeader {...params}/>
+            </Suspense>
+            
+            <AboutMe bio={dictionary["bio"]} />
+            
+            <Suspense fallback={<Loading />}>
+                <ProfileStats />
+            </Suspense>
+
+            <Suspense fallback={<Loading />}>
+                <TechStack />
+            </Suspense>
+            
+            <ProjectGrid dictionary={dictionary} />
+            
+            <SpeedDial currentLang={lang} />
+        </>
+    )
 }
