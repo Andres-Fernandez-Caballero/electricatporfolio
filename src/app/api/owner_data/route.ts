@@ -1,8 +1,10 @@
 import fs from "fs";
+import path from "path";
 
 export async function GET() {
-  
-  const data = fs.readFileSync("public/projects/owner_data.json", "utf-8");
+  const publicPath = path.join(process.cwd(), "public");
+  const projectsPath = path.join(publicPath, "projects");
+  const data = fs.readFileSync(path.join(projectsPath,"owner_data.json"), "utf-8");
   const jsonData = JSON.parse(data);
   
   return Response.json({
