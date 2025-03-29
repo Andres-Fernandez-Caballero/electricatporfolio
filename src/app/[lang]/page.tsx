@@ -7,23 +7,35 @@ import { TechStack } from "@/components/tech-stack"
 import Loading from "./loading"
 import { SpeedDial } from "@/components/ui/speed-dial"
 import { Locale } from "@/lib/dictionary"
+import { notFound } from "next/navigation"
 
 export type HaveLangProps = {
     lang: Locale
 }
 
-// eslint-disable-next-line 
-export default async function ProfilePage({ params }: any) {
-    const { lang } = params
+export default async function ProfilePage({ 
+  params 
+}: { 
+  params: Promise<{ lang: Locale }> 
+}) {
+    // Await the params object before using it
+    const { lang } = await params
+    
+    if (!lang) {
+      notFound()
+    }
+
+    // Create an object with the awaited lang value to pass to components
+    const langProps = { lang }
 
     return (
         <>
             <Suspense fallback={<Loading />}>
-                <ProfileHeader {...params}/>
+                <ProfileHeader {...langProps} />
             </Suspense>
             
             <Suspense fallback={<Loading />}>
-                <AboutMe {...params} />
+                <AboutMe {...langProps} />
             </Suspense>
             
             <Suspense fallback={<Loading />}>
@@ -35,7 +47,7 @@ export default async function ProfilePage({ params }: any) {
             </Suspense>
             
             <Suspense fallback={<Loading />}>
-                <ProjectGrid {...params} />
+                <ProjectGrid {...langProps} />
             </Suspense>
              
             <SpeedDial currentLang={lang} /> 

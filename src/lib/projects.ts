@@ -1,3 +1,4 @@
+import { serverUrl } from "@/app/config";
 import { Dictionary } from "./dictionary";
 
 type Project = {
@@ -11,7 +12,7 @@ type Project = {
 
 export async function fetchProjects(): Promise<Project[]> {
     try {
-       const res = await fetch(`${process.env.SERVER_URL}/api/projects`);
+       const res = await fetch(`${serverUrl}/api/projects`);
        if(!res.ok)
             throw new Error(`Failed to fetch projects status ERROR: ${res.status}`)
         return ((await res.json()).data as Project[]); 

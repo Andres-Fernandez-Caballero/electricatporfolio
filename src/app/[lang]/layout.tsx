@@ -17,6 +17,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Andres Fernandez - Electricat",
   description: "Portafolio de proyectos de Andres Fernandez - Electricat",
+  icons: {
+    //icon: "/favicon.svg",
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.png', type: 'image/png' },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -24,11 +31,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  
   return (
     <html lang="en">
-        <head>
-        <link rel="icon" href="/favicon.svg" sizes="any" />
-        </head>
+        
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
