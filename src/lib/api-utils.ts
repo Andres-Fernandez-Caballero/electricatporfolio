@@ -2,12 +2,18 @@
  * Utility function for making API requests with proper error handling
  */
 export async function fetchAPI<T>(endpoint: string, options?: RequestInit): Promise<T> {
-    const baseUrl = process.env.VERCEL_URL
-      ? process.env.VERCEL_URL
-      : process.env.NODE_ENV === "production"
-        ? process.env.NEXT_PUBLIC_SERVER_URL // optional
-        : "http://localhost:3000"
-  
+    
+    let baseUrl = 'http://localhost:3000'
+    if(process.env.VERCEL_URL) 
+      baseUrl = process.env.VERCEL_URL
+    else if(process.env.NEXT_PUBLIC_SERVER_URL) 
+      baseUrl = process.env.NEXT_PUBLIC_SERVER_URL
+    
+    // i want to check that url start with http:// or https://
+    if (!baseUrl.startsWith("http://") && !baseUrl.startsWith("https://")) {
+        baseUrl = `https://${baseUrl}`
+    }
+    
     const url = `${baseUrl}${endpoint.startsWith("/") ? endpoint : `/${endpoint}`}`
   
     try {
