@@ -11,7 +11,7 @@ type Project = {
 
 export async function fetchProjects(): Promise<Project[]> {
     try {
-       const res = await fetch('http://localhost:3000/api/projects');
+       const res = await fetch(`${process.env.SERVER_URL}/api/projects`);
        if(!res.ok)
             throw new Error(`Failed to fetch projects status ERROR: ${res.status}`)
         return ((await res.json()).data as Project[]); 

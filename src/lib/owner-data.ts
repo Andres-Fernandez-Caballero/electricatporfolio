@@ -12,7 +12,7 @@ interface OwnerData {
 
 export async function fetchOwnerData(): Promise<OwnerData> {
     try {
-        const res = await fetch("http://localhost:3000/api/owner_data");
+        const res = await fetch(`${process.env.SERVER_URL}/api/owner_data`);
         if(!res.ok) 
             throw new Error(`Failed to fetch owner data status ERROR: ${res.status}`);
         return ((await res.json()).data as OwnerData)
