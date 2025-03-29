@@ -1,4 +1,3 @@
-import { serverUrl } from "@/app/config";
 import { fetchAPI } from "./api-utils";
 
 interface OwnerData {
@@ -18,7 +17,7 @@ export async function fetchOwnerData(): Promise<OwnerData> {
       const response = await fetchAPI<{ data: OwnerData }>("/api/owner_data")
       return response.data
     } catch (error) {
-      // Fallback data if the API request fails
+      console.error("Error fetching owner data:", error)
       return {
         name: "Default Name",
         company: "Default Company",

@@ -15,6 +15,7 @@ export async function fetchProjects(): Promise<Project[]> {
        const response = await fetchAPI<{ data: Project[] }>("/api/projects")
        return response.data; 
     } catch (error) {
+        console.error("Error fetching projects", error)
         return []
     }
 }
