@@ -1,0 +1,4 @@
+{
+    "title": "Reservation App",
+    "description": "I developed a mobile app that allows skaters and clubs to easily book skating rink sessions with the Argentine Skating Confederation. It’s powered by a robust Laravel backend, handling availability, notifications, and automated payments seamlessly. The system takes care of everything—from booking to confirmation—preventing double reservations and making rink management effortless. With MercadoPago integration, payments are processed efficiently, ensuring a smooth, intuitive, and hassle-free user experience."
+}

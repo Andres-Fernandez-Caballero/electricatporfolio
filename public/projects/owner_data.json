@@ -1,0 +1,35 @@
+{
+  "github_projects": 68,
+  "company": "Electricat",
+  "github": "",
+  "linkedin": "",
+  "email": "andres.fernandezcaballero@davinci.edu.ar",
+  "name": "Andres Pablo Fernandez Caballero",
+  "position": "Full Stack Engineer",
+  "tusclases": {
+    "link":"https://www.tusclases.com.ar/profesores-programacion-online/clases-programacion-personalizadas-online-1063348.aspx",
+    "rates": 40
+  },
+  "technologies": [
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Next.js",
+    "Tailwind CSS",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "MySQL",
+    "Docker",
+    "Git",
+    "Linux",
+    "GitHub",
+    "Python",
+    "PHP",
+    "C",
+    "C++",
+    "HTML",
+    "CSS",
+    "Laravel"
+  ]
+}

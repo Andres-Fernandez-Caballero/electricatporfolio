@@ -31,11 +31,9 @@ export function middleware(request: NextRequest) {
     )
   }
 }
-
 export const config = {
   matcher: [
     // Excluir archivos estáticos y API routes
-    '/((?!api|_next/static|_next/image|favicon.ico).*)',
+    '/((?!_next/static|_next/image|favicon.ico|assets/.*|projects/.*|api/.*|imgs/.*).*)',
   ],
-}
-
+};

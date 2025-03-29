@@ -1,0 +1,4 @@
+{
+    "title":"Aplicacion de turnos",
+    "description": "Desarrollé una app móvil que permite a patinadores y clubes reservar turnos en pistas de la Confederación Argentina de Patinaje de manera rápida y sencilla. Todo está respaldado por un robusto backend en Laravel, que gestiona disponibilidad, notificaciones y pagos de forma automatizada. El sistema se encarga de todo: desde la reserva hasta la confirmación, evitando dobles turnos y facilitando la organización de las pistas. La integración con MercadoPago permite gestionar pagos de manera eficiente, mientras que la experiencia de usuario es ágil, intuitiva y sin complicaciones."
+}

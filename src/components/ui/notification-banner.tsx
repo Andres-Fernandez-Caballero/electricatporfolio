@@ -21,9 +21,9 @@ const NotificationBanner: FC = () => {
           <line x1="12" y1="16" x2="12.01" y2="16"></line>
         </svg>
         <div>
-          <h2 className="text-lg font-medium mb-1">¡Hey! Este proyecto está todavía en desarrollo 🏗️, No te lo tomes tan en serio 😄</h2>
+          <h2 className="text-lg font-medium mb-1">¡Hey! 🚀 Este proyecto aún está en construcción, ¡así que no te asustes si ves algún error! 😄🔧</h2>
           <p className="text-amber-200/90">
-            Hay errores, lo sé 🥹, pero estoy trabajando en eso en los tiempos libres para resolverlos 🏁
+          Sí, hay detalles por pulir 🛠️, pero poco a poco los voy solucionando en mis ratos libres. ¡Gracias por tu paciencia! 💪✨
           </p>
         </div>
       </div>

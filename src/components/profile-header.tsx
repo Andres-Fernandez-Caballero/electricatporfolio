@@ -1,24 +1,15 @@
-
-
 import { Github, Linkedin, Download } from 'lucide-react'
 import { Card } from "@/components/ui/card"
 import { LinkButton } from './ui/link-button'
 import Link from 'next/link'
-//import { GithubResponse } from '@/app/[lang]/page';
 import Image from 'next/image';
 import electricatImage from '@/app/assets/electricat_logo-min.jpeg';
 import { use } from 'react';
-import { fetchUserData } from '@/lib/github';
+import { fetchOwnerData } from '@/lib/owner-data';
+import { HaveLangProps } from '@/app/[lang]/page';
 
-
-
-type ProfileHeaderProps = {
-    lang: string
-}
-
-export function ProfileHeader(prop: ProfileHeaderProps) {
-
-    const gitData = use(fetchUserData());
+export function ProfileHeader(prop: HaveLangProps) {
+    const ownerData = use(fetchOwnerData());
 
     return (
         <Card className="relative overflow-hidden border-blue-500/50 bg-gradient-to-br from-black to-blue-950">
@@ -35,10 +26,10 @@ export function ProfileHeader(prop: ProfileHeaderProps) {
                     {/* Información del perfil */}
                     <div className="flex-1 space-y-1 sm:space-y-2">
                         <h1 className="text-2xl sm:text-3xl font-bold tracking-tighter text-white">
-                            {gitData?.company}
+                            {ownerData.company}
                         </h1>
                         <p className="text-base sm:text-lg text-blue-400">
-                            Full Stack Engineer
+                            {ownerData.position}
                         </p>
                         <div className="flex flex-wrap gap-2">
                             <LinkButton
@@ -83,7 +74,7 @@ export function ProfileHeader(prop: ProfileHeaderProps) {
                 <div className="mt-6">
                     <Link href="#about">
                         <h2 className="text-lg sm:text-xl font-bold tracking-tighter text-white hover:text-blue-400">
-                            {gitData?.name}
+                            {ownerData?.name}
                         </h2>
                     </Link>
                 </div>

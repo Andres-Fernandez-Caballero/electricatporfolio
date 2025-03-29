@@ -44,11 +44,11 @@ export function SpeedDial({ currentLang }: { currentLang: string }) {
         {Object.entries(languages).map(([lang, label]) => (
           <Button
             key={lang}
-            variant={currentLang === lang ? "default" : "secondary"}
+            variant={currentLang === lang ? "terciary" : "default"}
             className="w-32 justify-start gap-2"
             onClick={() => handleLanguageChange(lang)}
           >
-            <span>{lang === 'es' ? '🇪🇸' : '🇬🇧'}</span>
+            <span>{lang === 'es' ? 'Es' : 'En'}</span>
             {label}
           </Button>
         ))}

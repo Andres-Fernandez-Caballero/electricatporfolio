@@ -1,0 +1,5 @@
+{
+    "github": "https://github.com/Andres-Fernandez-Caballero/CAP-skate",
+    "live": "https://dataskate.net/",
+    "technologies": ["PHP", "MySQL", "Laravel", "Blade", "Docker"]
+}
