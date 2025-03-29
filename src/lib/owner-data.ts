@@ -1,4 +1,5 @@
 import { serverUrl } from "@/app/config";
+import { fetchAPI } from "./api-utils";
 
 interface OwnerData {
     name: string,
@@ -14,12 +15,22 @@ interface OwnerData {
 
 export async function fetchOwnerData(): Promise<OwnerData> {
     try {
-        const res = await fetch(`${serverUrl}/api/owner_data`);
-        if(!res.ok) 
-            throw new Error(`Failed to fetch owner data status ERROR: ${res.status}`);
-        return ((await res.json()).data as OwnerData)
-    } catch (e) {
-        console.log(e);
-        throw new Error("Failed to fetch owner data"); 
+      const response = await fetchAPI<{ data: OwnerData }>("/api/owner_data")
+      return response.data
+    } catch (error) {
+      // Fallback data if the API request fails
+      return {
+        name: "Default Name",
+        company: "Default Company",
+        github_projects: 0,
+        technologies: ["JavaScript", "React", "Next.js"],
+        github: "https://github.com/",
+        linkedin: "https://linkedin.com/",
+        email: "example@example.com",
+        position: "Developer",
+        tusclases: { link: "#", rates: 5 },
+      }
     }
-}
+  }
+  
+  
