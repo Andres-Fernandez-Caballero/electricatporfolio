@@ -1,35 +1,7 @@
-import { fetchAPI } from "./api-utils";
+import { OwnerData } from "@/contracts/domain";
+import { getOwnerData } from "@/app/actions/get-owner-data.action";
 
-interface OwnerData {
-    name: string,
-    company: string,
-    github_projects: number,
-    technologies: string[],
-    github: string,
-    linkedin: string,
-    email: string,
-    position: string,
-    tusclases: {link: string, rates: number}
-}
 
 export async function fetchOwnerData(): Promise<OwnerData> {
-    try {
-      const response = await fetchAPI<{ data: OwnerData }>("/api/owner_data")
-      return response.data
-    } catch (error) {
-      console.error("Error fetching owner data:", error)
-      return {
-        name: "Default Name",
-        company: "Default Company",
-        github_projects: 0,
-        technologies: ["JavaScript", "React", "Next.js"],
-        github: "https://github.com/",
-        linkedin: "https://linkedin.com/",
-        email: "example@example.com",
-        position: "Developer",
-        tusclases: { link: "#", rates: 5 },
-      }
-    }
-  }
-  
-  
+   return await getOwnerData()
+}

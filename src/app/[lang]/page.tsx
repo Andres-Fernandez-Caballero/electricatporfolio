@@ -6,8 +6,8 @@ import { ProfileStats } from "@/components/profile-stats"
 import { TechStack } from "@/components/tech-stack"
 import Loading from "./loading"
 import { SpeedDial } from "@/components/ui/speed-dial"
-import { Locale } from "@/lib/dictionary"
 import { notFound } from "next/navigation"
+import { Locale } from "@/contracts/domain"
 
 export type HaveLangProps = {
     lang: Locale

@@ -1,21 +1,11 @@
-import { Dictionary } from "./dictionary";
-import { fetchAPI } from "./api-utils";
-
-type Project = {
-    name: string,
-    technologies: string[],
-    live: string,
-    github: string,
-    dictionary: Dictionary,
-    images: string[], 
-}
+import { Project } from "@/contracts/domain";
+import { getProjects } from "@/app/actions/get-projects.action";
 
 export async function fetchProjects(): Promise<Project[]> {
-    try {
-       const response = await fetchAPI<{ data: Project[] }>("/api/projects")
-       return response.data; 
-    } catch (error) {
-        console.error("Error fetching projects", error)
-        return []
-    }
+  try {
+    return await getProjects();
+  } catch (error) {
+    console.error("Error fetching projects", error);
+    return [];
+  }
 }

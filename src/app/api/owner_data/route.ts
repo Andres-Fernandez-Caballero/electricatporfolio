@@ -1,14 +1,11 @@
-import fs from "fs";
-import path from "path";
+import { getOwnerData } from "@/app/actions/get-owner-data.action";
 
 export async function GET() {
-  const publicPath = path.join(process.cwd(), "public");
-  const projectsPath = path.join(publicPath, "projects");
-  const data = fs.readFileSync(path.join(projectsPath,"owner_data.json"), "utf-8");
-  const jsonData = JSON.parse(data);
-  
+
+  const onwerData = await getOwnerData();
+
   return Response.json({
     message: "ok",
-    data: jsonData
+    data: onwerData
   })
 }

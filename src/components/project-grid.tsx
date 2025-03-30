@@ -3,8 +3,8 @@ import { Zap } from "lucide-react"
 import { ProjectCarousel } from "./ui/project-carousel"
 import { use } from "react"
 import { fetchProjects } from "@/lib/projects"
-import { Locale } from "@/lib/dictionary"
 import { HaveLangProps } from "@/app/[lang]/page"
+import { Locale } from "@/contracts/domain"
 
 export function ProjectGrid(props: HaveLangProps) {
   const projects = use(fetchProjects());
